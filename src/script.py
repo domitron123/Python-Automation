@@ -6,7 +6,6 @@ import numpy as np
 import random
 import win32api, win32con
 
-counter = 0
 grandma = False
 time.sleep(2)
 
@@ -22,16 +21,17 @@ def keyInput(char):
     pyautogui.keyUp(char)
 
 def mainCookie():
-    for i in range(36):
+    i = 0
+    while True:
         i += 1
         click(289, 418)
         if keyboard.is_pressed('q'):
-            i = 36
+            break
         if i == 35:
             i = 0
             clickGrandma()
             if grandma == False:
-                i = 36
+                break
 
 # LEARNING
 def clickGrandma():
